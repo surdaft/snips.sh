@@ -2,13 +2,13 @@
 {{ define "description" }}Latest Snips{{ end }}
 
 {{ define "content" }}
-<div id="feed">
-  {{ range .Snips }}
-  {{ template "file-details" . }}
-  {{ else }}
-  <div>
-    <span>No Snips</span>
-  </div>
-  {{ end }}
-</div>
+    <div id="feed">
+        {{ range .Snips }}
+            {{ template "file-details" . }}
+        {{ else }}
+            <div>
+                <span>No Snips</span>
+            </div>
+        {{ end }}
+    </div>
 {{ end }}

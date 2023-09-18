@@ -1,0 +1,19 @@
+{
+  "name": "snips.sh",
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3"
+  },
+  "scripts": {
+    "prettier:check": "bun prettier --check web",
+    "prettier:fix": "bun prettier --write web",
+    "eslint:check": "bun eslint web/static",
+    "eslint:fix": "bun eslint --fix web/static"
+  },
+  "dependencies": {
+    "prettier-plugin-go-template": "^0.0.15"
+  }
+}
