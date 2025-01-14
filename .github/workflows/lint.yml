@@ -8,17 +8,18 @@ on:
 
 permissions:
   contents: read
+  checks: write
 
 jobs:
   golangci-lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-go@v4
+    - uses: actions/setup-go@v5
       with:
-        go-version: '1.20'
+        go-version-file: go.mod
     - run: script/install-libtensorflow
-    - uses: golangci/golangci-lint-action@v3
+    - uses: golangci/golangci-lint-action@v6
       with:
-        version: v1.53.3
+        version: v1.61.0
         args: --timeout 3m0s

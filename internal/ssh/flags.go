@@ -12,8 +12,8 @@ import (
 )
 
 var (
-	ErrFlagRequied = errors.New("flag required")
-	ErrFlagParse   = errors.New("parse error")
+	ErrFlagRequired = errors.New("flag required")
+	ErrFlagParse    = errors.New("parse error")
 )
 
 type UploadFlags struct {
@@ -37,7 +37,7 @@ func (uf *UploadFlags) Parse(out io.Writer, args []string) error {
 	}
 
 	if uf.TTL.Seconds() > 0 && !uf.Private {
-		return fmt.Errorf("%w: -private", ErrFlagRequied)
+		return fmt.Errorf("%w: -private", ErrFlagRequired)
 	}
 
 	uf.Extension = strings.TrimPrefix(strings.ToLower(uf.Extension), ".")
@@ -62,7 +62,7 @@ func (sf *SignFlags) Parse(out io.Writer, args []string) error {
 	}
 
 	if sf.TTL.Seconds() == 0 {
-		return fmt.Errorf("%w: -ttl", ErrFlagRequied)
+		return fmt.Errorf("%w: -ttl", ErrFlagRequired)
 	}
 
 	return nil
