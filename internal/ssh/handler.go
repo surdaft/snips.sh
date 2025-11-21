@@ -34,6 +34,12 @@ type SessionHandler struct {
 func (h *SessionHandler) HandleFunc(_ ssh.Handler) ssh.Handler {
 	lipgloss.SetColorProfile(termenv.ANSI256)
 
+	// todo: testing, remove this
+	// this does not seem to work as expected for me, potentially for
+	// cases where it is not natively working we can provide an
+	// option in the help bar to toggle dark mode
+	lipgloss.SetHasDarkBackground(false)
+
 	return func(sesh ssh.Session) {
 		userSesh := &UserSession{sesh}
 

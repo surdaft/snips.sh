@@ -5,11 +5,13 @@ import (
 
 	"github.com/alecthomas/chroma/v2/formatters"
 	"github.com/alecthomas/chroma/v2/styles"
+	"github.com/charmbracelet/lipgloss"
 )
 
 const (
-	TermFormatter = "terminal256"
-	TermStyle     = "base16-snazzy"
+	TermFormatter  = "terminal256"
+	TermStyle      = "base16-snazzy"
+	TermStyleLight = "github"
 )
 
 // ToSyntaxHighlightedTerm returns ANSI of the syntax highlighted code via Chroma
@@ -26,6 +28,10 @@ func ToSyntaxHighlightedTerm(fileType string, fileContent []byte) (string, error
 	}
 
 	style := styles.Get(TermStyle)
+	if !lipgloss.HasDarkBackground() {
+		style = styles.Get(TermStyleLight)
+	}
+
 	if style == nil {
 		style = styles.Fallback
 	}

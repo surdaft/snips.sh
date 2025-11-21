@@ -16,16 +16,16 @@ var (
 		Muted   lipgloss.TerminalColor
 		Black   lipgloss.TerminalColor
 	}{
-		Primary: lipgloss.Color("#0ac5b2"),
-		Green:   lipgloss.Color("#63c174"),
-		Red:     lipgloss.Color("#ff6368"),
-		Yellow:  lipgloss.Color("#f1a10d"),
-		Blue:    lipgloss.Color("#52a9ff"),
-		Pink:    lipgloss.Color("#f76191"),
-		Purple:  lipgloss.Color("#bf7af0"),
-		White:   lipgloss.Color("7"),
-		Muted:   lipgloss.Color("8"),
-		Black:   lipgloss.Color("16"),
+		Primary: lipgloss.AdaptiveColor{Dark: "#0ac5b2", Light: "#12a899"},
+		Green:   lipgloss.AdaptiveColor{Dark: "#63c174", Light: "#347540"},
+		Red:     lipgloss.AdaptiveColor{Dark: "#ff6368", Light: "#aa3337"},
+		Yellow:  lipgloss.AdaptiveColor{Dark: "#f1a10d", Light: "#f1a10d"},
+		Blue:    lipgloss.AdaptiveColor{Dark: "#52a9ff", Light: "#2667a8"},
+		Pink:    lipgloss.AdaptiveColor{Dark: "#f76191", Light: "#ba4368"},
+		Purple:  lipgloss.AdaptiveColor{Dark: "#bf7af0", Light: "#6b3393"},
+		White:   lipgloss.AdaptiveColor{Dark: "7", Light: "#000000"},
+		Muted:   lipgloss.AdaptiveColor{Dark: "8", Light: "#404040"},
+		Black:   lipgloss.AdaptiveColor{Dark: "16", Light: "#FFFFFF"},
 	}
 )
 
